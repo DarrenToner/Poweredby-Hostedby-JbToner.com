@@ -1,35 +1,40 @@
 # Usage Instructions for `hostedbyjbtoner.min.js` and `poweredbyjbtoner.min.js`
 
-These scripts are intended for use on websites hosted or created by JB Toner. Follow the instructions below to implement them on WordPress or HTML-based websites.
+This script is intended for use on websites hosted or created by JB Toner. It dynamically adds a footer to the site, either displaying "Powered by JB Toner" or "Hosted by JB Toner" based on a parameter passed in the script.
 
 ## For WordPress:
-To include the JavaScript files in your WordPress site, use the following PHP snippets:
+To include the `jb.js` file in your WordPress site, use the following PHP snippet:
 
-### Hosted by JB Toner:
-
+### Enqueue the Script:
 ```php
-function enqueue_hosted_by_jbtoner_script() {
-    wp_enqueue_script( 'hosted-by-jbtoner', 'https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/hostedbyjbtoner.min.js', array(), null, true );
+function enqueue_jbtoner_script() {
+    wp_enqueue_script( 'jbtoner-footer', 'https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/jb.min.js', array(), null, true );
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_hosted_by_jbtoner_script' );
+add_action( 'wp_enqueue_scripts', 'enqueue_jbtoner_script' );
 ```
 
-### Powered by JB Toner:
+Pass the Parameter (Powered or Hosted):
 ```php
-function enqueue_powered_by_jbtoner_script() {
-    wp_enqueue_script( 'powered-by-jbtoner', 'https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/poweredbyjbtoner.min.js', array(), null, true );
+function add_jbtoner_footer() {
+    echo '<script>createFooter("powered");</script>'; 
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_powered_by_jbtoner_script' );
+add_action( 'wp_footer', 'add_jbtoner_footer' );
 ```
 
-## For Plain HTML
+## For HTML:
 
 ### Hosted by JB Toner:
 ```html
-<script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/hostedbyjbtoner.min.js"></script>
+<script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/jb.min.js"></script>
+<script>
+    createFooter('hosted');
+</script>
 ```
 
-### Powered by Jb Toner
+### Powered by JB Toner
 ```html
-<script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/poweredbyjbtoner.min.js"></script>
+<script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/jb.min.js"></script>
+<script>
+    createFooter('powered');
+</script>
 ```

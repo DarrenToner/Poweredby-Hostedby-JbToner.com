@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer Test</title>
 </head>
+
 <body>
     <h1>Testing Footer Scripts</h1>
     <p>This page is for testing the "Powered by" and "Hosted by" footers.</p>
 
-    <!-- Include the JS file -->
-    <script src="jb.js"></script>
+    <script src="jb.min.js"></script>
 
-    <!-- Pass the type parameter in an inline script -->
     <script>
-      createFooter('hosted'); // Or 'hosted'
+        window.onload = function () {
+            createJbFooter('powered');
+        };
     </script>
 
 </body>
 
 <footer>
-    Elements will be added below this as part of the footer 
+    Elements will be added below this as part of the footer
 </footer>
+
 </html>

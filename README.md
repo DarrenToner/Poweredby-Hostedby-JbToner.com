@@ -1,9 +1,9 @@
-# Usage Instructions for `hostedbyjbtoner.min.js` and `poweredbyjbtoner.min.js`
+# Usage Instructions for `jb.min.js`
 
 This script is intended for use on websites hosted or created by JB Toner. It dynamically adds a footer to the site, either displaying "Powered by JB Toner" or "Hosted by JB Toner" based on a parameter passed in the script.
 
 ## For WordPress:
-To include the `jb.js` file in your WordPress site, use the following PHP snippet:
+To include the `jb.min.js` file in your WordPress site, use the following PHP snippet:
 
 ### Enqueue the Script:
 ```php
@@ -13,28 +13,30 @@ function enqueue_jbtoner_script() {
 add_action( 'wp_enqueue_scripts', 'enqueue_jbtoner_script' );
 ```
 
-Pass the Parameter (Powered or Hosted):
+### Pass the Parameter (Powered or Hosted):
 ```php
 function add_jbtoner_footer() {
-    echo '<script>createFooter("powered");</script>'; 
+    echo '<script>createJbFooter("powered");</script>'; 
 }
 add_action( 'wp_footer', 'add_jbtoner_footer' );
 ```
 
-## For HTML:
-
-### Hosted by JB Toner:
+## HTML Sites:
+### For hosted:
 ```html
 <script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/jb.min.js"></script>
 <script>
-    createFooter('hosted');
+    createJbFooter('hosted');
 </script>
 ```
 
-### Powered by JB Toner
+###For Powered
 ```html
 <script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/jb.min.js"></script>
 <script>
-    createFooter('powered');
+    createJbFooter('powered');
 </script>
 ```
+
+Ensure you replace the parameter ('powered' or 'hosted') depending on what you want to display on your client's site.
+

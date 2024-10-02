@@ -1,4 +1,4 @@
-function createJbFooter(type) {
+window.createJbFooter = function(type) {
     let footerContent = type === 'powered'
       ? 'Powered by jbtoner.com'
       : 'Hosted by jbtoner.com';
@@ -84,10 +84,9 @@ function createJbFooter(type) {
         </a>
       </div>
     `;
-  
+
     let footer = document.querySelector('footer');
     if (footer) {
       footer.innerHTML += footerDiv.innerHTML;
     }
-  }
-  
+  };

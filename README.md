@@ -30,7 +30,7 @@ add_action( 'wp_footer', 'add_jbtoner_footer' );
 </script>
 ```
 
-###For Powered
+### For Powered
 ```html
 <script src="https://raw.githubusercontent.com/DarrenToner/Poweredby-Hostedby-JbToner.com/master/jb.min.js"></script>
 <script>

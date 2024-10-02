@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer Test</title>
 </head>
-
 <body>
     <h1>Testing Footer Scripts</h1>
     <p>This page is for testing the "Powered by" and "Hosted by" footers.</p>
 
+    <!-- Ensure this script tag correctly references your JS file -->
     <script src="jb.min.js"></script>
 
+    <!-- This calls the function after the script is loaded -->
     <script>
-        window.onload = function () {
-            createJbFooter('powered');
-        };
+      window.onload = function() {
+        createJbFooter('powered'); // Change to 'hosted' if needed
+      };
     </script>
 
 </body>
